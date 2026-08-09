@@ -10,7 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Professional Portfolio",
+  title: "Sarishma",
   description: "A premium modern portfolio showcasing my skills and projects.",
 };
 
@@ -20,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth suppressHydrationWarning">
       <body className={`${inter.variable} antialiased`}>
         <ScrollProgress />
         {children}
