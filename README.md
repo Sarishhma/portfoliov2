@@ -46,4 +46,4 @@ The application will be available at `http://localhost:3000`.
 
 **Sarishma Zimba**
 
-A developer passionate about building modern, responsive, and user-friendly web applications.
+
