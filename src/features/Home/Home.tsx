@@ -66,8 +66,8 @@ export default function Home() {
             className="flex flex-wrap gap-4 pt-4"
           >
             <a 
-              href="/cv/sarishma.pdf" 
-              download="sarishma_zimba_cv.pdf"
+              href="/cv/sarishmacv.pdf" 
+              download="sarishmacv.pdf"
               className="px-8 py-3 rounded-full bg-brand-primary text-white font-medium hover:bg-brand-secondary transition-all duration-300 shadow-[0_0_20px_rgba(99,102,241,0.4)] hover:shadow-[0_0_30px_rgba(139,92,246,0.6)]"
             >
               Download CV
