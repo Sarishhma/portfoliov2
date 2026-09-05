@@ -6,36 +6,36 @@ import { RiGithubLine, RiExternalLinkLine } from 'react-icons/ri';
 
 const projects = [
   {
-    title: 'E-Commerce Platform',
-    description: 'A full-stack e-commerce solution with Next.js, Prisma, and Stripe integration.',
-    tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Stripe'],
-    github: '#',
-    demo: '#',
-    image: '/Projects/HamroStore.png'
+    title: 'Bijeshwori Mala Traders',
+    description: 'Bijeshwori Mala Traders is an e-commerce website built for a Nepal-based family business that sells handcrafted goods home décor,  jewelry, and traditional clothing from their stores in Thamel and Boudha, Kathmandu. ',
+    tags: ['React', 'TypeScript', 'Tailwind CSS','React hook'],
+    github: 'https://github.com/Sarishhma/ecommerce.git',
+    demo: 'https://bijeshworimalatraders.com/',
+    image: '/Projects/BMT.png'
   },
   {
-    title: 'AI Dashboard',
-    description: 'Analytics dashboard powered by machine learning for real-time data visualization.',
-    tags: ['React', 'Python', 'FastAPI', 'Chart.js'],
+    title: 'Himalayan Neo Tech',
+    description: 'A modern and responsive company website designed to showcase the company’s services, products, and information. It provides a professional online presence with a clean interface and easy navigation for visitors.',
+    tags: ['React', 'TypeScript', 'Tailwind CSS'],
     github: '#',
-    demo: '#',
-    image: '/Projects/movie.png'
+    demo: 'https://www.himalayaneotech.com/',
+    image: '/Projects/Himalayan.png'
   },
   {
-    title: 'Social Connect',
-    description: 'A social networking app focused on connecting developers worldwide.',
-    tags: ['Node.js', 'MongoDB', 'Socket.io', 'React'],
-    github: '#',
-    demo: '#',
-    image: null
+    title: 'Health Pal',
+    description: 'HealthPal, a platform aimed at making healthcare in Nepal more transparent and accessible.',
+    tags: ['Node.js', 'MongoDB', 'Socket.io', 'Next.js','Typescript'],
+    github: 'https://github.com/Sarishhma/Healthpal.git',
+    demo: 'https://healthpal-three.vercel.app/',
+    image: '/Projects/healthpal.png'
   },
   {
-    title: 'Portfolio V2',
-    description: 'Modern, highly optimized portfolio built with Framer Motion and glassmorphism.',
-    tags: ['Next.js', 'Framer Motion', 'Tailwind CSS'],
-    github: '#',
-    demo: '#',
-    image: null
+    title: ' Sudarshan Security Website',
+    description: 'A modern, professional security service website built to showcase the services, trust, and reliability of Sudarshan Security',
+    tags: ['React', 'Framer Motion', 'Tailwind CSS','Javascript'],
+    github: 'https://github.com/Sarishhma/sudarshansecurity.git',
+    demo: 'https://www.sudarshansecurity.com.np/',
+    image: '/Projects/sudarshanSecurity.png'
   }
 ];
 
