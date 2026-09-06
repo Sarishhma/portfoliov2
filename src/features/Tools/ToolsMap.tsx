@@ -27,10 +27,10 @@ const DBeaverIcon = () => (
 
 const skills = [
   { name: 'TypeScript', icon: <SiTypescript className="w-7 h-7 text-[#3178C6]" /> },
-  { name: 'Next.js', icon: <SiNextdotjs className="w-7 h-7 text-white" /> },
+  { name: 'Next.js', icon: <SiNextdotjs className="w-7 h-7 text-foreground" /> },
   { name: 'React', icon: <SiReact className="w-7 h-7 text-[#61DAFB]" /> },
   { name: 'Node.js', icon: <SiNodedotjs className="w-7 h-7 text-[#5FA04E]" /> },
-  { name: 'Prisma', icon: <SiPrisma className="w-7 h-7 text-white" /> },
+  { name: 'Prisma', icon: <SiPrisma className="w-7 h-7 text-foreground" /> },
   { name: 'MongoDB', icon: <SiMongodb className="w-7 h-7 text-[#47A248]" /> },
   { name: 'DBeaver', icon: <DBeaverIcon /> },
   { name: 'Tailwind CSS', icon: <SiTailwindcss className="w-7 h-7 text-[#06B6D4]" /> },
@@ -39,7 +39,7 @@ const skills = [
   { name: 'CSS3', icon: <SiCss className="w-7 h-7 text-[#1572B6]" /> },
   { name: 'Vite', icon: <SiVite className="w-7 h-7 text-[#646CFF]" /> },
   { name: 'Git', icon: <SiGit className="w-7 h-7 text-[#F05032]" /> },
-  { name: 'GitHub', icon: <SiGithub className="w-7 h-7 text-white" /> },
+  { name: 'GitHub', icon: <SiGithub className="w-7 h-7 text-foreground" /> },
   { name: 'Figma', icon: <SiFigma className="w-7 h-7 text-[#F24E1E]" /> },
 ];
 
@@ -65,7 +65,7 @@ export default function ToolsMap() {
     <section id="tools" className="py-24 px-6 lg:px-16 relative">
       <div className="max-w-6xl mx-auto">
         
-        {/* Subdued Lavender Header */}
+        {/* Header */}
         <motion.div 
           className="text-center mb-16"
           initial={{ opacity: 0, y: -15 }}
@@ -73,15 +73,15 @@ export default function ToolsMap() {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.5 }}
         >
-          <span className="text-xs font-mono tracking-widest text-purple-300/80 uppercase mb-3 block">
-            [ Tech Stack ]
+          <span className="badge mb-3 inline-block">
+            Tech Stack
           </span>
 
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight text-white">
-            Tools & <span className="text-purple-300">Technologies</span>
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 tracking-tight text-foreground font-serif">
+            Tools & <span className="text-brand-primary">Technologies</span>
           </h2>
 
-          <p className="text-slate-400 max-w-xl mx-auto text-sm md:text-base leading-relaxed">
+          <p className="text-foreground-muted max-w-xl mx-auto text-sm md:text-base leading-relaxed">
             My technology stack is constantly evolving. Here are the modern tools and frameworks I use to build robust applications.
           </p>
         </motion.div>
@@ -98,16 +98,15 @@ export default function ToolsMap() {
             <motion.div 
               key={index}
               variants={itemVariants}
-              whileHover={{ y: -3 }}
-              className="group p-5 rounded-xl bg-purple-950/10 border border-purple-900/30 flex flex-col items-center justify-center gap-3 cursor-default transition-all duration-200 hover:border-purple-500/30 hover:bg-purple-950/20"
+              className="group p-5 flat-card-interactive flex flex-col items-center justify-center gap-3 cursor-default"
             >
-              {/* Icon Container with Original Brand Colors */}
-              <div className="p-2.5 rounded-lg bg-slate-900/60 border border-purple-900/20 group-hover:border-purple-500/30 transition-colors duration-200">
+              {/* Icon Container */}
+              <div className="p-3 rounded-sm bg-surface-muted border border-surface-border group-hover:border-brand-primary/30 transition-colors duration-200">
                 {skill.icon}
               </div>
 
               {/* Text */}
-              <span className="font-medium text-xs md:text-sm text-slate-300 group-hover:text-purple-200 transition-colors duration-200">
+              <span className="font-medium text-xs md:text-sm text-foreground group-hover:text-brand-primary transition-colors duration-200">
                 {skill.name}
               </span>
             </motion.div>

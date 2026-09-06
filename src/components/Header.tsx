@@ -27,11 +27,11 @@ export default function Header() {
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'py-4 backdrop-blur-md bg-background/70 border-b border-white/10 shadow-lg' : 'py-6 bg-transparent'
+        isScrolled ? 'py-4 bg-surface border-b border-surface-border' : 'py-6 bg-transparent'
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 lg:px-16 flex items-center justify-between">
-        <a href="#home" className="text-2xl font-bold text-white tracking-tighter">
+        <a href="#home" className="text-2xl font-bold text-foreground font-serif tracking-tight">
           Sarishma<span className="text-brand-primary">.</span>
         </a>
 
@@ -41,7 +41,7 @@ export default function Header() {
             <a 
               key={link.name}
               href={link.href}
-              className="text-sm font-medium text-gray-300 hover:text-white transition-colors relative group"
+              className="text-sm font-medium text-foreground-muted hover:text-foreground transition-colors relative group"
             >
               {link.name}
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-primary transition-all group-hover:w-full" />
@@ -52,7 +52,7 @@ export default function Header() {
 
         {/* Mobile Nav Toggle */}
         <button 
-          className="md:hidden text-2xl text-white p-2"
+          className="md:hidden text-2xl text-foreground p-2"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? <RiCloseLine /> : <RiMenu3Line />}
@@ -66,7 +66,7 @@ export default function Header() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-surface border-b border-white/10 overflow-hidden"
+            className="md:hidden bg-surface border-b border-surface-border overflow-hidden"
           >
             <nav className="flex flex-col p-6 gap-4">
               {navLinks.map((link) => (
@@ -74,7 +74,7 @@ export default function Header() {
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-lg font-medium text-gray-300 hover:text-brand-primary transition-colors"
+                  className="text-lg font-medium text-foreground-muted hover:text-brand-primary transition-colors"
                 >
                   {link.name}
                 </a>

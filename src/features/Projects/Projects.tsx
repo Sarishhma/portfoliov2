@@ -69,22 +69,22 @@ export default function Projects() {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.5 }}
         >
-          <span className="text-xs font-mono tracking-widest text-blue-400/90 uppercase mb-3 block">
-            [ Portfolio ]
+          <span className="badge mb-3 inline-block">
+            Portfolio
           </span>
 
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight text-white">
-            Featured <span className="text-blue-400">Projects</span>
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 tracking-tight text-foreground font-serif">
+            Featured <span className="text-brand-primary">Projects</span>
           </h2>
 
-          <p className="text-slate-400 max-w-xl mx-auto text-sm md:text-base leading-relaxed">
+          <p className="text-foreground-muted max-w-xl mx-auto text-sm md:text-base leading-relaxed">
             Curated projects showcasing my skills, creativity, and dedication to building exceptional digital experiences.
           </p>
         </motion.div>
 
         {/* Projects Grid */}
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 gap-8"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -94,20 +94,19 @@ export default function Projects() {
             <motion.div 
               key={index}
               variants={projectVariants}
-              whileHover={{ y: -4 }}
-              className="group rounded-2xl bg-slate-900/40 border border-slate-800/80 overflow-hidden flex flex-col h-full hover:border-blue-500/40 hover:bg-slate-900/60 transition-all duration-300"
+              className="flat-card-interactive flex flex-col h-full overflow-hidden"
             >
               {/* Image Container */}
-              <div className="h-52 w-full bg-slate-950 border-b border-slate-800/80 relative overflow-hidden flex items-center justify-center">
+              <div className="h-56 w-full bg-surface-muted border-b border-surface-border relative overflow-hidden flex items-center justify-center">
                 {project.image ? (
                   <img 
                     src={project.image} 
                     alt={project.title} 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" 
+                    className="w-full h-full object-cover" 
                   />
                 ) : (
-                  <div className="relative w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-950/30 to-slate-950">
-                    <span className="text-5xl font-black text-slate-800 group-hover:text-blue-500/20 transition-colors duration-300 select-none">
+                  <div className="relative w-full h-full flex items-center justify-center bg-surface-muted">
+                    <span className="text-4xl font-serif font-bold text-foreground-muted/40 select-none">
                       {project.title.substring(0, 2).toUpperCase()}
                     </span>
                   </div>
@@ -115,12 +114,12 @@ export default function Projects() {
               </div>
               
               {/* Content Body */}
-              <div className="p-6 md:p-7 flex flex-col flex-grow">
-                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-blue-300 transition-colors duration-200">
+              <div className="p-6 md:p-8 flex flex-col flex-grow">
+                <h3 className="text-2xl font-bold font-serif text-foreground mb-3">
                   {project.title}
                 </h3>
 
-                <p className="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
+                <p className="text-foreground-muted text-sm leading-relaxed mb-6 flex-grow">
                   {project.description}
                 </p>
                 
@@ -129,7 +128,7 @@ export default function Projects() {
                   {project.tags.map(tag => (
                     <span 
                       key={tag} 
-                      className="px-2.5 py-1 text-xs font-medium text-blue-300/90 bg-blue-950/50 border border-blue-900/40 rounded-md"
+                      className="px-2.5 py-1 text-xs font-medium text-brand-primary bg-brand-primary-tint border border-brand-primary/20 rounded-sm"
                     >
                       {tag}
                     </span>
@@ -137,18 +136,22 @@ export default function Projects() {
                 </div>
                 
                 {/* Action Links */}
-                <div className="flex items-center gap-5 pt-4 border-t border-slate-800/80">
+                <div className="flex items-center gap-6 pt-4 border-t border-surface-border mt-auto">
                   <a 
                     href={project.github} 
-                    className="flex items-center gap-2 text-xs md:text-sm font-medium text-slate-400 hover:text-white transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-sm font-medium text-foreground-muted hover:text-foreground transition-colors"
                   >
-                    <RiGithubLine className="text-base text-slate-400" /> Code
+                    <RiGithubLine className="text-base" /> Source Code
                   </a>
                   <a 
                     href={project.demo} 
-                    className="flex items-center gap-2 text-xs md:text-sm font-medium text-slate-400 hover:text-blue-400 transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1.5 text-sm font-medium text-brand-primary hover:text-brand-primary-hover transition-colors ml-auto"
                   >
-                    <RiExternalLinkLine className="text-base text-blue-400" /> Live Demo
+                    View Project <RiExternalLinkLine className="text-base" />
                   </a>
                 </div>
               </div>

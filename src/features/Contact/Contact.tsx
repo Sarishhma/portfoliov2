@@ -67,15 +67,13 @@ export default function Contact() {
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.5 }}
         >
-          <span className="text-xs font-mono tracking-widest text-purple-300/80 uppercase mb-3 block">
-            [ Contact ]
-          </span>
+          
 
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight text-white">
-            Get In <span className="text-purple-300">Touch</span>
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 tracking-tight text-foreground font-serif">
+            Get In <span className="text-brand-primary">Touch</span>
           </h2>
 
-          <p className="text-slate-400 max-w-xl mx-auto text-sm md:text-base leading-relaxed">
+          <p className="text-foreground-muted max-w-xl mx-auto text-sm md:text-base leading-relaxed">
             Have a question or want to work together? Let's discuss your project.
           </p>
         </motion.div>
@@ -86,7 +84,7 @@ export default function Contact() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-50px' }}
-          className="rounded-2xl bg-purple-950/10 border border-purple-900/30 p-8 md:p-10 backdrop-blur-xl relative overflow-hidden"
+          className="flat-card p-8 md:p-12 relative overflow-hidden"
         >
           <form
             onSubmit={handleSubmit}
@@ -98,7 +96,7 @@ export default function Contact() {
               <div className="flex flex-col gap-2">
                 <label
                   htmlFor="name"
-                  className="text-xs font-medium text-slate-300 uppercase tracking-wider"
+                  className="text-xs font-semibold text-foreground uppercase tracking-wider"
                 >
                   Your Name
                 </label>
@@ -111,7 +109,7 @@ export default function Contact() {
                   value={formData.name}
                   required
                   disabled={isLoading}
-                  className="w-full px-4 py-3 rounded-xl bg-slate-900/60 border border-purple-900/20 text-slate-100 placeholder-slate-500 text-sm focus:outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/50 transition-all duration-200 disabled:opacity-50"
+                  className="w-full px-4 py-3 rounded-sm bg-background border border-surface-border text-foreground placeholder-foreground-muted/60 text-sm focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition-all duration-200 disabled:opacity-50"
                 />
               </div>
 
@@ -119,7 +117,7 @@ export default function Contact() {
               <div className="flex flex-col gap-2">
                 <label
                   htmlFor="email"
-                  className="text-xs font-medium text-slate-300 uppercase tracking-wider"
+                  className="text-xs font-semibold text-foreground uppercase tracking-wider"
                 >
                   Your Email
                 </label>
@@ -133,7 +131,7 @@ export default function Contact() {
                   value={formData.email}
                   required
                   disabled={isLoading}
-                  className="w-full px-4 py-3 rounded-xl bg-slate-900/60 border border-purple-900/20 text-slate-100 placeholder-slate-500 text-sm focus:outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/50 transition-all duration-200 disabled:opacity-50"
+                  className="w-full px-4 py-3 rounded-sm bg-background border border-surface-border text-foreground placeholder-foreground-muted/60 text-sm focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition-all duration-200 disabled:opacity-50"
                 />
               </div>
             </div>
@@ -142,7 +140,7 @@ export default function Contact() {
             <div className="flex flex-col gap-2">
               <label
                 htmlFor="message"
-                className="text-xs font-medium text-slate-300 uppercase tracking-wider"
+                className="text-xs font-semibold text-foreground uppercase tracking-wider"
               >
                 Your Message
               </label>
@@ -156,7 +154,7 @@ export default function Contact() {
                 required
                 disabled={isLoading}
                 rows={5}
-                className="w-full px-4 py-3 rounded-xl bg-slate-900/60 border border-purple-900/20 text-slate-100 placeholder-slate-500 text-sm focus:outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/50 transition-all duration-200 resize-none disabled:opacity-50"
+                className="w-full px-4 py-3 rounded-sm bg-background border border-surface-border text-foreground placeholder-foreground-muted/60 text-sm focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition-all duration-200 resize-none disabled:opacity-50"
               />
             </div>
 
@@ -166,19 +164,19 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={isLoading}
-                className="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-purple-900/40 hover:bg-purple-900/60 border border-purple-700/40 text-purple-100 font-medium text-sm transition-all duration-200 hover:border-purple-500/50 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full sm:w-auto px-8 py-3.5 rounded-sm bg-brand-primary hover:bg-brand-primary-hover text-surface font-medium text-sm transition-colors duration-200 active:scale-[0.99] disabled:opacity-50 disabled:cursor-not-allowed shadow-none"
               >
                 {isLoading ? 'Sending...' : 'Send Message'}
               </button>
 
               {success && (
-                <p className="text-sm font-medium text-emerald-400">
+                <p className="text-sm font-medium text-emerald-700">
                   {success}
                 </p>
               )}
 
               {error && (
-                <p className="text-sm font-medium text-rose-400">
+                <p className="text-sm font-medium text-rose-700">
                   {error}
                 </p>
               )}
