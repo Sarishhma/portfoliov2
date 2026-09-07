@@ -54,9 +54,7 @@ export default function AboutMe() {
             className="space-y-6"
           >
             <motion.div variants={textVariants} className="inline-block">
-              <span className="badge mb-3 inline-block">
-                Get To Know Me
-              </span>
+             
               <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-foreground font-serif">
                 About <span className="text-brand-primary">Me</span>
               </h2>

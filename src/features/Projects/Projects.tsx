@@ -69,9 +69,7 @@ export default function Projects() {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.5 }}
         >
-          <span className="badge mb-3 inline-block">
-            Portfolio
-          </span>
+      
 
           <h2 className="text-3xl md:text-5xl font-bold mb-4 tracking-tight text-foreground font-serif">
             Featured <span className="text-brand-primary">Projects</span>
