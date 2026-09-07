@@ -24,53 +24,53 @@ export default function Home() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-6 lg:px-16 py-20 overflow-hidden">
+    <section id="home" className="relative min-h-[calc(100vh-4rem)] flex items-center justify-center px-4 sm:px-6 lg:px-16 pt-28 pb-16 md:pt-36 md:pb-20 overflow-hidden">
       
-      <div className="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
         {/* Text Content */}
         <motion.div 
-          className="flex flex-col space-y-6"
+          className="flex flex-col space-y-4 sm:space-y-6 text-left"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
           <motion.h2 
             variants={itemVariants}
-            className="text-lg md:text-xl font-medium tracking-wider text-brand-primary uppercase"
+            className="text-xs sm:text-sm md:text-base font-semibold tracking-wider text-brand-primary uppercase"
           >
             Welcome to my portfolio
           </motion.h2>
           
           <motion.h1 
             variants={itemVariants}
-            className="text-5xl md:text-7xl font-bold tracking-tight text-foreground font-serif"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground font-serif leading-[1.1] break-words"
           >
-            Hi I'm <br/>
+            Hi I'm <br className="hidden sm:inline" />
             <span className="text-foreground">Sarishma Zimba</span>
             <span className="text-brand-primary">.</span>
           </motion.h1>
 
           <motion.p 
             variants={itemVariants}
-            className="text-lg md:text-xl text-foreground-muted max-w-xl leading-relaxed"
+            className="text-base sm:text-lg md:text-xl text-foreground-muted max-w-xl leading-relaxed"
           >
             A passionate Web developer turning innovative ideas into seamless digital experiences, driven to build modern, high-performance applications that make a difference.
           </motion.p>
 
           <motion.div 
             variants={itemVariants}
-            className="flex flex-wrap gap-4 pt-4"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2 sm:pt-4 w-full sm:w-auto"
           >
             <a 
               href="/cv/sarishmacv.pdf" 
               download="sarishmacv.pdf"
-              className="px-8 py-3 rounded-sm bg-brand-primary text-surface font-medium hover:bg-brand-primary-hover transition-all duration-300"
+              className="w-full sm:w-auto text-center px-6 sm:px-8 py-3 sm:py-3.5 rounded-sm bg-brand-primary text-surface font-medium hover:bg-brand-primary-hover transition-all duration-300"
             >
               Download CV
             </a>
             <a 
               href="#projects"
-              className="px-8 py-3 rounded-sm border border-surface-border text-foreground font-medium hover:bg-surface transition-all duration-300"
+              className="w-full sm:w-auto text-center px-6 sm:px-8 py-3 sm:py-3.5 rounded-sm border border-surface-border text-foreground font-medium hover:bg-surface transition-all duration-300"
             >
               Explore My Projects
             </a>
@@ -79,30 +79,30 @@ export default function Home() {
 
         {/* Profile/Visual Content placeholder */}
         <motion.div 
-          className="relative flex justify-center lg:justify-end"
+          className="relative flex justify-center lg:justify-end mt-4 lg:mt-0"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.6 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <div className="w-full max-w-sm aspect-[4/5] flat-card p-2 overflow-hidden relative group">
+          <div className="w-full max-w-[260px] sm:max-w-[320px] lg:max-w-sm aspect-[4/5] flat-card p-2 overflow-hidden relative group shadow-sm">
             <div className="w-full h-full relative overflow-hidden rounded-sm bg-surface-muted">
-            <img 
-  src="/Picture/image.png" 
-  alt="Sarishma Zimba" 
-  className="w-full h-full object-cover object-[center_20%]"
-  onError={(e) => {
-    const target = e.currentTarget;
-    target.style.display = 'none';
-    const parent = target.parentElement;
-    if (parent) {
-      parent.innerHTML = `
-        <div class="w-full h-full bg-surface-muted flex items-center justify-center">
-          <span class="text-6xl font-serif font-bold text-foreground opacity-50">SZ</span>
-        </div>
-      `;
-    }
-  }}
-/>
+              <img 
+                src="/Picture/image.png" 
+                alt="Sarishma Zimba" 
+                className="w-full h-full object-cover object-[center_20%]"
+                onError={(e) => {
+                  const target = e.currentTarget;
+                  target.style.display = 'none';
+                  const parent = target.parentElement;
+                  if (parent) {
+                    parent.innerHTML = `
+                      <div class="w-full h-full bg-surface-muted flex items-center justify-center">
+                        <span class="text-6xl font-serif font-bold text-foreground opacity-50">SZ</span>
+                      </div>
+                    `;
+                  }
+                }}
+              />
             </div>
           </div>
         </motion.div>

@@ -7,15 +7,15 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="py-12 px-6 lg:px-16 border-t border-surface-border bg-surface relative mt-20">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+    <footer className="py-10 sm:py-12 px-4 sm:px-6 lg:px-16 border-t border-surface-border bg-surface relative mt-12 sm:mt-20">
+      <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-5 sm:gap-6">
         
         {/* Brand / Copy */}
-        <div className="flex flex-col items-center md:items-start">
+        <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
           <h3 className="text-xl font-bold tracking-tight text-foreground font-serif">
             Sarishma<span className="text-brand-primary">.</span>
           </h3>
-          <p className="text-sm text-foreground-muted mt-2">
+          <p className="text-xs sm:text-sm text-foreground-muted mt-1.5 sm:mt-2">
             © {currentYear} Sarishma Zimba. All rights reserved.
           </p>
         </div>

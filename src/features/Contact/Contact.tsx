@@ -56,24 +56,22 @@ export default function Contact() {
   };
 
   return (
-    <section id="chat" className="py-24 px-6 lg:px-16 relative">
+    <section id="chat" className="py-16 md:py-24 px-4 sm:px-6 lg:px-16 relative">
       <div className="max-w-4xl mx-auto">
 
         {/* Header */}
         <motion.div
-          className="text-center mb-12"
+          className="text-center mb-8 sm:mb-12"
           initial={{ opacity: 0, y: -15 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-100px' }}
+          viewport={{ once: true, margin: '-50px' }}
           transition={{ duration: 0.5 }}
         >
-          
-
-          <h2 className="text-3xl md:text-5xl font-bold mb-4 tracking-tight text-foreground font-serif">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 tracking-tight text-foreground font-serif">
             Get In <span className="text-brand-primary">Touch</span>
           </h2>
 
-          <p className="text-foreground-muted max-w-xl mx-auto text-sm md:text-base leading-relaxed">
+          <p className="text-foreground-muted max-w-xl mx-auto text-xs sm:text-sm md:text-base leading-relaxed px-2">
             Have a question or want to work together? Let's discuss your project.
           </p>
         </motion.div>
@@ -84,13 +82,13 @@ export default function Contact() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-50px' }}
-          className="flat-card p-8 md:p-12 relative overflow-hidden"
+          className="flat-card p-5 sm:p-8 md:p-12 relative overflow-hidden"
         >
           <form
             onSubmit={handleSubmit}
-            className="flex flex-col gap-6 relative z-10"
+            className="flex flex-col gap-5 sm:gap-6 relative z-10"
           >
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
 
               {/* Name Field */}
               <div className="flex flex-col gap-2">
@@ -109,7 +107,7 @@ export default function Contact() {
                   value={formData.name}
                   required
                   disabled={isLoading}
-                  className="w-full px-4 py-3 rounded-sm bg-background border border-surface-border text-foreground placeholder-foreground-muted/60 text-sm focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition-all duration-200 disabled:opacity-50"
+                  className="w-full px-4 py-3 rounded-sm bg-background border border-surface-border text-foreground placeholder-foreground-muted/60 text-base sm:text-sm focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition-all duration-200 disabled:opacity-50"
                 />
               </div>
 
@@ -131,7 +129,7 @@ export default function Contact() {
                   value={formData.email}
                   required
                   disabled={isLoading}
-                  className="w-full px-4 py-3 rounded-sm bg-background border border-surface-border text-foreground placeholder-foreground-muted/60 text-sm focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition-all duration-200 disabled:opacity-50"
+                  className="w-full px-4 py-3 rounded-sm bg-background border border-surface-border text-foreground placeholder-foreground-muted/60 text-base sm:text-sm focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition-all duration-200 disabled:opacity-50"
                 />
               </div>
             </div>
@@ -154,7 +152,7 @@ export default function Contact() {
                 required
                 disabled={isLoading}
                 rows={5}
-                className="w-full px-4 py-3 rounded-sm bg-background border border-surface-border text-foreground placeholder-foreground-muted/60 text-sm focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition-all duration-200 resize-none disabled:opacity-50"
+                className="w-full px-4 py-3 rounded-sm bg-background border border-surface-border text-foreground placeholder-foreground-muted/60 text-base sm:text-sm focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition-all duration-200 resize-none disabled:opacity-50"
               />
             </div>
 
@@ -170,13 +168,13 @@ export default function Contact() {
               </button>
 
               {success && (
-                <p className="text-sm font-medium text-emerald-700">
+                <p className="text-sm font-medium text-emerald-700 text-center sm:text-left">
                   {success}
                 </p>
               )}
 
               {error && (
-                <p className="text-sm font-medium text-rose-700">
+                <p className="text-sm font-medium text-rose-700 text-center sm:text-left">
                   {error}
                 </p>
               )}

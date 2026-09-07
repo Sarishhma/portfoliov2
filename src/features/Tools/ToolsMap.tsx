@@ -62,33 +62,33 @@ export default function ToolsMap() {
   };
 
   return (
-    <section id="tools" className="py-24 px-6 lg:px-16 relative">
+    <section id="tools" className="py-16 md:py-24 px-4 sm:px-6 lg:px-16 relative">
       <div className="max-w-6xl mx-auto">
         
         {/* Header */}
         <motion.div 
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16"
           initial={{ opacity: 0, y: -15 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.5 }}
         >
           <span className="badge mb-3 inline-block">
             Tech Stack
           </span>
 
-          <h2 className="text-3xl md:text-5xl font-bold mb-4 tracking-tight text-foreground font-serif">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 tracking-tight text-foreground font-serif">
             Tools & <span className="text-brand-primary">Technologies</span>
           </h2>
 
-          <p className="text-foreground-muted max-w-xl mx-auto text-sm md:text-base leading-relaxed">
+          <p className="text-foreground-muted max-w-xl mx-auto text-xs sm:text-sm md:text-base leading-relaxed px-2">
             My technology stack is constantly evolving. Here are the modern tools and frameworks I use to build robust applications.
           </p>
         </motion.div>
 
         {/* Minimal Grid */}
         <motion.div 
-          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4"
+          className="grid grid-cols-2 min-[480px]:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -98,15 +98,15 @@ export default function ToolsMap() {
             <motion.div 
               key={index}
               variants={itemVariants}
-              className="group p-5 flat-card-interactive flex flex-col items-center justify-center gap-3 cursor-default"
+              className="group p-3.5 sm:p-5 flat-card-interactive flex flex-col items-center justify-center gap-2 sm:gap-3 cursor-default"
             >
               {/* Icon Container */}
-              <div className="p-3 rounded-sm bg-surface-muted border border-surface-border group-hover:border-brand-primary/30 transition-colors duration-200">
+              <div className="p-2.5 sm:p-3 rounded-sm bg-surface-muted border border-surface-border group-hover:border-brand-primary/30 transition-colors duration-200">
                 {skill.icon}
               </div>
 
               {/* Text */}
-              <span className="font-medium text-xs md:text-sm text-foreground group-hover:text-brand-primary transition-colors duration-200">
+              <span className="font-medium text-xs sm:text-sm text-foreground group-hover:text-brand-primary transition-colors duration-200 text-center">
                 {skill.name}
               </span>
             </motion.div>

@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { RiMenu3Line, RiCloseLine } from 'react-icons/ri';
 
 const navLinks = [
-  { name: 'Home', href: '#' },
+  { name: 'Home', href: '#home' },
   { name: 'About', href: '#about' },
   { name: 'Tools', href: '#tools' },
   { name: 'Projects', href: '#projects' },
@@ -24,14 +24,47 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+ const handleLinkClick = (
+  e: React.MouseEvent<HTMLAnchorElement>,
+  href: string
+) => {
+  e.preventDefault();
+
+  setIsMobileMenuOpen(false);
+
+  setTimeout(() => {
+    const targetId = href.replace('#', '');
+    const element = document.getElementById(targetId);
+
+    if (!element) return;
+
+    const headerOffset = 80;
+    const elementPosition = element.getBoundingClientRect().top;
+    const offsetPosition =
+      elementPosition + window.scrollY - headerOffset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth',
+    });
+
+    // Update URL hash
+    window.history.pushState(null, '', href);
+  }, 100);
+};
+
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'py-4 bg-surface border-b border-surface-border' : 'py-6 bg-transparent'
+        isScrolled || isMobileMenuOpen ? 'py-4 bg-surface border-b border-surface-border' : 'py-6 bg-transparent'
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 lg:px-16 flex items-center justify-between">
-        <a href="#home" className="text-2xl font-bold text-foreground font-serif tracking-tight">
+        <a 
+          href="#home" 
+          onClick={(e) => handleLinkClick(e, '#home')}
+          className="text-2xl font-bold text-foreground font-serif tracking-tight"
+        >
           Sarishma<span className="text-brand-primary">.</span>
         </a>
 
@@ -41,19 +74,20 @@ export default function Header() {
             <a 
               key={link.name}
               href={link.href}
+              onClick={(e) => handleLinkClick(e, link.href)}
               className="text-sm font-medium text-foreground-muted hover:text-foreground transition-colors relative group"
             >
               {link.name}
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-primary transition-all group-hover:w-full" />
             </a>
           ))}
-    
         </nav>
 
         {/* Mobile Nav Toggle */}
         <button 
           className="md:hidden text-2xl text-foreground p-2"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Toggle navigation menu"
         >
           {isMobileMenuOpen ? <RiCloseLine /> : <RiMenu3Line />}
         </button>
@@ -73,8 +107,8 @@ export default function Header() {
                 <a 
                   key={link.name}
                   href={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-lg font-medium text-foreground-muted hover:text-brand-primary transition-colors"
+                  onClick={(e) => handleLinkClick(e, link.href)}
+                  className="text-lg font-medium text-foreground-muted hover:text-brand-primary transition-colors cursor-pointer"
                 >
                   {link.name}
                 </a>

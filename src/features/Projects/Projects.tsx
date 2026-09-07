@@ -58,31 +58,29 @@ export default function Projects() {
   };
 
   return (
-    <section id="projects" className="py-24 px-6 lg:px-16 relative">
+    <section id="projects" className="py-16 md:py-24 px-4 sm:px-6 lg:px-16 relative">
       <div className="max-w-6xl mx-auto">
         
         {/* Header Section */}
         <motion.div 
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16"
           initial={{ opacity: 0, y: -15 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.5 }}
         >
-      
-
-          <h2 className="text-3xl md:text-5xl font-bold mb-4 tracking-tight text-foreground font-serif">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 tracking-tight text-foreground font-serif">
             Featured <span className="text-brand-primary">Projects</span>
           </h2>
 
-          <p className="text-foreground-muted max-w-xl mx-auto text-sm md:text-base leading-relaxed">
+          <p className="text-foreground-muted max-w-xl mx-auto text-xs sm:text-sm md:text-base leading-relaxed px-2">
             Curated projects showcasing my skills, creativity, and dedication to building exceptional digital experiences.
           </p>
         </motion.div>
 
         {/* Projects Grid */}
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -95,7 +93,7 @@ export default function Projects() {
               className="flat-card-interactive flex flex-col h-full overflow-hidden"
             >
               {/* Image Container */}
-              <div className="h-56 w-full bg-surface-muted border-b border-surface-border relative overflow-hidden flex items-center justify-center">
+              <div className="h-44 sm:h-56 w-full bg-surface-muted border-b border-surface-border relative overflow-hidden flex items-center justify-center">
                 {project.image ? (
                   <img 
                     src={project.image} 
@@ -112,21 +110,21 @@ export default function Projects() {
               </div>
               
               {/* Content Body */}
-              <div className="p-6 md:p-8 flex flex-col flex-grow">
-                <h3 className="text-2xl font-bold font-serif text-foreground mb-3">
+              <div className="p-5 sm:p-6 md:p-8 flex flex-col flex-grow">
+                <h3 className="text-xl sm:text-2xl font-bold font-serif text-foreground mb-2 sm:mb-3">
                   {project.title}
                 </h3>
 
-                <p className="text-foreground-muted text-sm leading-relaxed mb-6 flex-grow">
+                <p className="text-foreground-muted text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6 flex-grow">
                   {project.description}
                 </p>
                 
                 {/* Tech Badges */}
-                <div className="flex flex-wrap gap-2 mb-6">
+                <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-4 sm:mb-6">
                   {project.tags.map(tag => (
                     <span 
                       key={tag} 
-                      className="px-2.5 py-1 text-xs font-medium text-brand-primary bg-brand-primary-tint border border-brand-primary/20 rounded-sm"
+                      className="px-2 py-0.5 sm:px-2.5 sm:py-1 text-[11px] sm:text-xs font-medium text-brand-primary bg-brand-primary-tint border border-brand-primary/20 rounded-sm"
                     >
                       {tag}
                     </span>
@@ -134,12 +132,12 @@ export default function Projects() {
                 </div>
                 
                 {/* Action Links */}
-                <div className="flex items-center gap-6 pt-4 border-t border-surface-border mt-auto">
+                <div className="flex flex-wrap sm:flex-nowrap items-center justify-between gap-3 pt-4 border-t border-surface-border mt-auto">
                   <a 
                     href={project.github} 
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-sm font-medium text-foreground-muted hover:text-foreground transition-colors"
+                    className="flex items-center gap-1.5 text-xs sm:text-sm font-medium text-foreground-muted hover:text-foreground transition-colors"
                   >
                     <RiGithubLine className="text-base" /> Source Code
                   </a>
@@ -147,7 +145,7 @@ export default function Projects() {
                     href={project.demo} 
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-1.5 text-sm font-medium text-brand-primary hover:text-brand-primary-hover transition-colors ml-auto"
+                    className="flex items-center gap-1.5 text-xs sm:text-sm font-medium text-brand-primary hover:text-brand-primary-hover transition-colors"
                   >
                     View Project <RiExternalLinkLine className="text-base" />
                   </a>
