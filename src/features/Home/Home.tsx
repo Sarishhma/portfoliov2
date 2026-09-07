@@ -86,23 +86,23 @@ export default function Home() {
         >
           <div className="w-full max-w-sm aspect-[4/5] flat-card p-2 overflow-hidden relative group">
             <div className="w-full h-full relative overflow-hidden rounded-sm bg-surface-muted">
-              <img 
-                src="/Picture/pic.jpg" 
-                alt="Sarishma Zimba" 
-                className="w-full h-full object-cover object-center"
-                onError={(e) => {
-                  const target = e.currentTarget;
-                  target.style.display = 'none';
-                  const parent = target.parentElement;
-                  if (parent) {
-                    parent.innerHTML = `
-                      <div class="w-full h-full bg-surface-muted flex items-center justify-center">
-                        <span class="text-6xl font-serif font-bold text-foreground opacity-50">SZ</span>
-                      </div>
-                    `;
-                  }
-                }}
-              />
+            <img 
+  src="/Picture/image.png" 
+  alt="Sarishma Zimba" 
+  className="w-full h-full object-cover object-[center_20%]"
+  onError={(e) => {
+    const target = e.currentTarget;
+    target.style.display = 'none';
+    const parent = target.parentElement;
+    if (parent) {
+      parent.innerHTML = `
+        <div class="w-full h-full bg-surface-muted flex items-center justify-center">
+          <span class="text-6xl font-serif font-bold text-foreground opacity-50">SZ</span>
+        </div>
+      `;
+    }
+  }}
+/>
             </div>
           </div>
         </motion.div>
